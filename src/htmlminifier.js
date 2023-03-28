@@ -291,7 +291,7 @@ function cleanAttributeValue(tag, attrName, attrValue, options, attrs) {
     attrValue = trimWhitespace(attrValue).split(/\s+,\s*|\s*,\s+/).map(function(candidate) {
       var url = candidate;
       var descriptor = '';
-      var match = candidate.match(/\s+([1-9][0-9]*w|[0-9]+(?:\.[0-9]+)?x)$/);
+      var match = candidate.match(/\s+([1-9][0-9]*w|[0-9]+(?=(\.[0-9]+|))\2x)$/);
       if (match) {
         url = url.slice(0, -match[0].length);
         var num = +match[1].slice(0, -1);

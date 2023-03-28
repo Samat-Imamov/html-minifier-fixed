@@ -1,4 +1,4 @@
-# HTMLMinifier
+# HTMLMinifier (Fixed)
 
 [![npm version](https://img.shields.io/npm/v/html-minifier.svg)](https://www.npmjs.com/package/html-minifier)
 [![Build Status](https://img.shields.io/github/workflow/status/kangax/html-minifier/CI/gh-pages)](https://github.com/kangax/html-minifier/actions?query=workflow%3ACI+branch%3Agh-pages)
@@ -13,6 +13,12 @@ See [corresponding blog post](http://perfectionkills.com/experimenting-with-html
 Also see corresponding [Ruby wrapper](https://github.com/stereobooster/html_minifier), and for Node.js, [Grunt plugin](https://github.com/gruntjs/grunt-contrib-htmlmin), [Gulp module](https://github.com/jonschlinkert/gulp-htmlmin), [Koa middleware wrapper](https://github.com/koajs/html-minifier) and [Express middleware wrapper](https://github.com/melonmanchan/express-minify-html).
 
 For lint-like capabilities take a look at [HTMLLint](https://github.com/kangax/html-lint).
+
+## Fix changes
+
+1. [CVE-2022-37620](https://www.cve.org/CVERecord?id=CVE-2022-37620)
+
+   - ***Line 294***: replaced regex `/\s+([1-9][0-9]*w|[0-9]+(?:\.[0-9]+)?x)$/` with `/\s+([1-9][0-9]*w|[0-9]+(?=(\.[0-9]+|))\2x)$/`
 
 ## Minification comparison
 
